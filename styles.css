@@ -676,8 +676,9 @@ body {
   
   /* Mobile Timeline Redesign */
   .timeline-container {
-    margin: 20px -2vw;
-    padding: 10px 1vw;
+    margin: 0px -2vw;
+    padding: 0px 1vw;
+    width: 100%;
     background: #f8f9fa;
     border-radius: 0;
     border-left: none;
