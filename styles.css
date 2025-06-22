@@ -9,6 +9,7 @@
   --text: #222;
   --border: #e0e0e0;
   --shadow: 0 2px 8px rgba(0,0,0,0.04);
+  --heading-blue: #007bff;
 }
 
 body {
@@ -35,9 +36,9 @@ body {
   font-weight: bold;
   letter-spacing: 3px;
   text-align: center;
-  margin-bottom: 6px;
+  margin-bottom: -10px;
   text-transform: uppercase;
-  color: var(--text);
+  color: var(--heading-blue);
 }
 
 .subtitle {
@@ -45,7 +46,7 @@ body {
   font-weight: 600;
   letter-spacing: 2px;
   text-align: center;
-  margin-bottom: 6px;
+  margin-bottom: -10px;
   text-transform: uppercase;
   color: #555;
 }
@@ -58,6 +59,48 @@ body {
   margin-bottom: 20px;
   text-transform: uppercase;
   color: var(--orange);
+}
+
+.timeline-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--heading-blue);
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.objectives-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--heading-blue);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.activities-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--heading-blue);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--orange);
+  padding-bottom: 6px;
+}
+
+.upcoming-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--heading-blue);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--orange);
+  padding-bottom: 6px;
 }
 
 /* Timeline Container */
@@ -221,16 +264,6 @@ body {
   box-shadow: var(--shadow);
 }
 
-.objectives-title {
-  font-size: 1.1rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
-  color: var(--text);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
 .objectives-grid {
   display: flex;
   flex-direction: column;
@@ -283,17 +316,6 @@ body {
   padding: 20px;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
-}
-
-.activities-title {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: var(--text);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-bottom: 2px solid var(--orange);
-  padding-bottom: 6px;
 }
 
 .activities-content {
@@ -361,20 +383,9 @@ body {
   flex: 1;
   background: white;
   border-radius: 12px;
-  padding: 20px;
+  padding: 10px;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
-}
-
-.upcoming-title {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: var(--text);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-bottom: 2px solid var(--orange);
-  padding-bottom: 6px;
 }
 
 .upcoming-list {
@@ -656,7 +667,7 @@ body {
   .events-grid { grid-template-columns: 1fr; }
   .main-title { font-size: 1.8rem; }
   .subtitle { font-size: 1.2rem; }
-  .workplan-title { font-size: 1.5rem; }
+  .workplan-title { font-size: 1.5rem; margin-bottom: 5px; }
   .summary-boxes { flex-direction: column; }
 }
 
@@ -667,10 +678,10 @@ body {
   .events-panel { width: 95%; padding: 20px; }
   .main-title { font-size: 1.2rem; }
   .subtitle { font-size: 1rem; }
-  .workplan-title { font-size: 1.3rem; }
+  .workplan-title { font-size: 1.3rem; margin-bottom: 5px; }
   .objectives-grid { flex-direction: column; }
   .objective-card { min-width: auto; }
-  .month-label { padding: 10px 12px; font-size: 0.95rem; }
+  .month-label { padding: 10px 4px; font-size: 1rem; border-radius: 6px; text-align: center; min-height: 50px; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; }
   .upcoming-item { flex-direction: column; gap: 8px; }
   .upcoming-date { min-width: auto; align-self: flex-start; }
   
@@ -717,69 +728,20 @@ body {
     margin: 0 -2vw;
     padding: 20px 2vw;
     background: #f8f9fa;
-    min-height: 60vh;
     width: 100%;
     border-radius: 0;
   }
   
-  .upcoming-title {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .upcoming-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
+  /* Force upcoming items to stay on same line */
   .upcoming-item {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    border-left: 6px solid;
-    min-height: 80px;
-    display: flex;
-    align-items: center;
+    flex-direction: row !important;
     gap: 15px;
-  }
-  
-  .upcoming-date {
-    background: #007bff;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    min-width: 60px;
-    text-align: center;
-  }
-  
-  .upcoming-content {
-    flex: 1;
-  }
-  
-  .upcoming-title-text {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: #333;
-  }
-  
-  .upcoming-category {
-    font-size: 0.8rem;
-    padding: 4px 8px;
-    border-radius: 12px;
-    display: inline-block;
-    font-weight: 500;
   }
   
   /* Mobile Timeline Redesign */
   .timeline-container {
     margin: 0px -2vw;
-    padding: 0px 1vw;
+    padding: 0px 1vw 10px;
     width: 100%;
     background: #f8f9fa;
     border-radius: 0;
@@ -795,11 +757,11 @@ body {
   }
   
   .month-label {
-    padding: 20px 4px;
+    padding: 10px 4px;
     font-size: 1rem;
     border-radius: 6px;
     text-align: center;
-    min-height: 100px;
+    min-height: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
