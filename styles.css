@@ -674,6 +674,108 @@ body {
   .upcoming-item { flex-direction: column; gap: 8px; }
   .upcoming-date { min-width: auto; align-self: flex-start; }
   
+  /* Mobile Objectives - 2x2 Grid */
+  .objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .objective-card {
+    min-height: 120px;
+    padding: 20px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .objective-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+  
+  .objective-card::after {
+    content: "Tap for details";
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.8);
+    font-style: italic;
+  }
+  
+  /* Hide activities section on mobile */
+  .activities-section {
+    display: none;
+  }
+  
+  /* Mobile Upcoming Activities - Full Screen */
+  .upcoming-section {
+    margin: 0 -2vw;
+    padding: 20px 2vw;
+    background: #f8f9fa;
+    min-height: 60vh;
+    width: 100%;
+    border-radius: 0;
+  }
+  
+  .upcoming-title {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .upcoming-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .upcoming-item {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-left: 6px solid;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .upcoming-date {
+    background: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    min-width: 60px;
+    text-align: center;
+  }
+  
+  .upcoming-content {
+    flex: 1;
+  }
+  
+  .upcoming-title-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .upcoming-category {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 12px;
+    display: inline-block;
+    font-weight: 500;
+  }
+  
   /* Mobile Timeline Redesign */
   .timeline-container {
     margin: 0px -2vw;
@@ -745,4 +847,44 @@ body {
     color: rgba(255, 255, 255, 0.6);
     font-style: italic;
   }
+}
+
+.events-content {
+  margin-top: 20px;
+}
+
+.events-content h3 {
+  font-size: 1.2rem;
+  color: var(--text);
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--orange);
+  padding-bottom: 8px;
+}
+
+.activity-details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.activity-details-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(238, 238, 238, 0.8);
+  font-size: 1rem;
+  color: var(--text);
+  position: relative;
+  padding-left: 25px;
+}
+
+.activity-details-list li:last-child {
+  border-bottom: none;
+}
+
+.activity-details-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-weight: bold;
+  font-size: 1.1rem;
 } 

@@ -221,4 +221,91 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
-}); 
+
+  // Objective card click handlers for mobile
+  const objectiveCards = document.querySelectorAll('.objective-card');
+  
+  objectiveCards.forEach(card => {
+    card.addEventListener('click', function() {
+      const objectiveName = this.querySelector('.objective-name').textContent;
+      showObjectiveDetails(objectiveName);
+    });
+  });
+});
+
+function showObjectiveDetails(objectiveName) {
+  // Create modal content based on objective
+  let activities = [];
+  let icon = '';
+  
+  switch(objectiveName) {
+    case 'Spiritual Development':
+      icon = '🙏';
+      activities = [
+        'Daily Prayer and Meditation',
+        'Weekly Bible Study', 
+        'Monthly Retreat',
+        'Quarterly Confession'
+      ];
+      break;
+    case 'Personal Development':
+      icon = '📚';
+      activities = [
+        'Skills Workshop',
+        'Leadership Training',
+        'Reading Program',
+        'Mentorship Program'
+      ];
+      break;
+    case 'Health and Wellness Program':
+      icon = '💪';
+      activities = [
+        'Fitness Challenge',
+        'Health Check-up',
+        'Nutrition Workshop',
+        'Mental Health Support'
+      ];
+      break;
+    case 'Community Service':
+      icon = '🤝';
+      activities = [
+        'Volunteer Outreach',
+        'Charity Events',
+        'Youth Mentoring',
+        'Community Clean-up'
+      ];
+      break;
+  }
+  
+  // Create modal HTML
+  const modalHTML = `
+    <div class="events-panel show" id="objectiveModal">
+      <div class="events-header">
+        <h2 class="events-title">${icon} ${objectiveName}</h2>
+        <button class="close-btn" onclick="closeObjectiveModal()">&times;</button>
+      </div>
+      <div class="events-content">
+        <h3>Activities & Details</h3>
+        <ul class="activity-details-list">
+          ${activities.map(activity => `<li>${activity}</li>`).join('')}
+        </ul>
+      </div>
+    </div>
+    <div class="modal-backdrop show" onclick="closeObjectiveModal()"></div>
+  `;
+  
+  // Add modal to page
+  document.body.insertAdjacentHTML('beforeend', modalHTML);
+}
+
+function closeObjectiveModal() {
+  const modal = document.getElementById('objectiveModal');
+  const backdrop = document.querySelector('.modal-backdrop');
+  
+  if (modal) {
+    modal.remove();
+  }
+  if (backdrop) {
+    backdrop.remove();
+  }
+} 
