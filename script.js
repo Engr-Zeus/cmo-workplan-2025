@@ -42,20 +42,24 @@ const monthlyEvents = {
   },
   jun: {
     proposed: [
-      "Fathers' Day Celebration (June 12th-15th)",
       "Mid-year Review Meeting",
       "Mentorship Program Launch",
       "Community Service Project"
     ],
-    completed: []
+    completed: [
+      "Fathers' Day Celebration (June 12th-15th)"
+    ]
   },
   jul: {
     proposed: [
       "Quarterly Retreat",
       "Skills Workshop: Communication",
-      "Environmental Clean-up"
+      "Environmental Clean-up",
+      "Pray Push & Play (July 26)"
     ],
-    completed: []
+    completed: [
+      "Summer Prayer Retreat (July 15)"
+    ]
   },
   aug: {
     proposed: [],
