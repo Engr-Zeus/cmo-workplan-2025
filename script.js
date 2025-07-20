@@ -261,13 +261,13 @@ function showObjectiveDetails(objectiveName) {
         'Mentorship Program'
       ];
       break;
-    case 'Health and Wellness Program':
+    case 'Health and Wellness':
       icon = '💪';
       activities = [
-        'Fitness Challenge',
-        'Health Check-up',
-        'Nutrition Workshop',
-        'Mental Health Support'
+        'Health Talks',
+        'Health Living practices',
+        'Mental Health programmes',
+        'Sports and Keep fit activities'
       ];
       break;
     case 'Community Service':
