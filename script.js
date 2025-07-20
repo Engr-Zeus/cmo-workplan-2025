@@ -304,12 +304,14 @@ function showObjectiveDetails(objectiveName) {
 
 function closeObjectiveModal() {
   const modal = document.getElementById('objectiveModal');
-  const backdrop = document.querySelector('.modal-backdrop');
-  
+  // Only remove the dynamically created modal-backdrop, not the one with id 'modalBackdrop'
+  const backdrops = document.querySelectorAll('.modal-backdrop');
   if (modal) {
     modal.remove();
   }
-  if (backdrop) {
-    backdrop.remove();
-  }
+  backdrops.forEach(backdrop => {
+    if (!backdrop.id) {
+      backdrop.remove();
+    }
+  });
 } 
